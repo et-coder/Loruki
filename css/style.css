@@ -6,6 +6,10 @@
     margin: 0;
 }
 
+:root {
+    --primary-color: #047aed;
+}
+
 body {
     font-family: 'lato', sans-serif;
     line-height: 1.6;
@@ -37,23 +41,12 @@ img {
     width: 100%;
 }
 
+/* Navigation */
+
 .navbar {
-    background: #047aed;
+    background: var(--primary-color);
     height: 70px;
     color: #fff;
-}
-
-.container {
-    max-width: 1100px;
-    padding: 0 40px;
-    overflow: auto;
-}
-
-.flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
 }
 
 .navbar .flex {
@@ -72,4 +65,123 @@ img {
 
 .navbar a:hover {
     border-bottom: 2px solid #fff;
+}
+
+/* Showcase */
+.showcase {
+    background-color: var(--primary-color);
+    height: 400px;
+    color: #fff;
+    position: relative;
+}
+
+.showcase h2 {
+    font-size: 40px;
+}
+
+.showcase p {
+    margin: 20px 0;
+}
+
+.showcase .grid {
+    grid-template-columns: 55% 45%;
+    gap: 30px;
+    overflow: visible;
+}
+
+.showcase-form {
+    position: relative;
+    top: 60px;
+    height: 350px;
+    width: 400px;
+    padding: 40px;
+    z-index: 100;
+}
+
+.showcase-form h3 {
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.showcase-form .form-control {
+    margin: 30px 0;
+}
+
+.showcase-form input[type='text'],
+.showcase-form input[type='email'] {
+    border: 0;
+    border-bottom: 1px solid #b4becb;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.showcase-form input:focus {
+    outline: none;
+}
+
+.showcase::before,
+.showcase::after {
+    content: '';
+    height: 100px;
+    background: #fff;
+    position: absolute;
+    bottom: -60px;
+    right: 0;
+    left: 0;
+    transform: skewY(-3deg);
+
+}
+
+/* Utilites */
+
+.container {
+    max-width: 1100px;
+    padding: 0 40px;
+    overflow: auto;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.card {
+    background-color: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-outline {
+    border: 1px solid #fff;
+    background-color: transparent;
+}
+
+.btn:hover {
+    transform: scale(0.98);
 }
