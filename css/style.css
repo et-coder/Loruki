@@ -87,18 +87,20 @@ img {
 }
 
 .showcase .grid {
-    grid-template-columns: 55% 45%;
-    gap: 30px;
+    grid-template-columns: 55% 40%;
+    gap: 40px;
     overflow: visible;
 }
 
 .showcase-form {
     position: relative;
     top: 60px;
-    height: 350px;
-    width: 400px;
+    min-height: 350px;
+    max-width: 400px;
+    width: 100%;
     padding: 40px;
     z-index: 100;
+    justify-self: flex-end;
 }
 
 .showcase-form h3 {
@@ -197,6 +199,70 @@ img {
     color: #fff;
 }
 
+.footer nav a:hover {
+    opacity: 0.8;
+}
+
 .footer .social a {
-    margin: 0 10px;
+    margin-right: 20px;
+}
+
+/* Tablets */
+
+@media(max-width: 768px) {
+
+    .grid,
+    .showcase .grid,
+    .stats .grid,
+    .cli .grid,
+    .cloud .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .showcase {
+        height: auto;
+    }
+
+    .showcase-text {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .showcase-form {
+        justify-self: center;
+        margin: auto;
+    }
+
+    .cli img {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .cli .grid {
+        align-items: center;
+    }
+
+}
+
+/* Mobiles */
+@media(max-width: 500px) {
+
+    .navbar {
+        height: auto;
+    }
+
+    .navbar .flex {
+        flex-direction: column;
+    }
+
+    .navbar ul {
+        background: rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        flex-wrap: wrap;
+    }
+
+    .navbar li {
+        margin: 0.1em auto;
+    }
 }
